@@ -1,0 +1,236 @@
+<% layout('/layouts/boilerplate') -%>
+<style>
+  .landing-hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #fff0f0 0%, #ffe6e6 100%);
+    padding: 3rem 0 2rem 0;
+    text-align: center;
+  }
+  .landing-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fe424d;
+    margin-bottom: 1.2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 12px #fe424d22;
+  }
+  .landing-subtitle {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 2.2rem;
+    font-weight: 500;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .landing-btns {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .landing-btn {
+    background: #fe424d;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    padding: 0.9rem 2.2rem;
+    border: none;
+    box-shadow: 0 2px 12px #fe424d22;
+    transition: background 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .landing-btn:hover {
+    background: #d92d3a;
+    transform: translateY(-2px) scale(1.04);
+    color: #fff;
+  }
+  .features-section {
+    background: #fff;
+    padding: 3rem 0 2rem 0;
+    text-align: center;
+  }
+  .features-title {
+    color: #fe424d;
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+  .features-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .feature-card {
+    background: #fff0f0;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px #fe424d11;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    max-width: 320px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .feature-card:hover {
+    box-shadow: 0 4px 24px #fe424d22;
+    transform: translateY(-4px) scale(1.03);
+  }
+  .feature-icon {
+    font-size: 2.5rem;
+    color: #fe424d;
+    margin-bottom: 1rem;
+  }
+  .feature-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    color: #d92d3a;
+  }
+  .feature-desc {
+    color: #555;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+  .how-section {
+    background: #f8f9fa;
+    padding: 2.5rem 0 2rem 0;
+    text-align: center;
+  }
+  .how-title {
+    color: #fe424d;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+  }
+  .how-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .how-step {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px #fe424d11;
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    max-width: 260px;
+    min-width: 180px;
+    flex: 1 1 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .how-step-num {
+    background: #fe424d;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.7rem;
+  }
+  .how-step-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #d92d3a;
+    margin-bottom: 0.5rem;
+  }
+  .how-step-desc {
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  @media (max-width: 900px) {
+    .features-list, .how-steps {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .landing-title {
+      font-size: 2.1rem;
+    }
+    .landing-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+<div class="landing-hero">
+  <div class="landing-title">Welcome to WanderLust</div>
+  <div class="landing-subtitle">
+    Discover, list, and review unique stays and experiences from around the world. WanderLust is your modern platform for finding trending destinations, sharing your own listings, and connecting with a vibrant travel community.
+  </div>
+  <div class="landing-btns">
+    <a href="/signup" class="landing-btn">Get Started</a>
+    <a href="/listings" class="landing-btn" style="background:#fff;color:#fe424d;border:2px solid #fe424d;">Browse Listings</a>
+  </div>
+</div>
+<div class="features-section">
+  <div class="features-title">Features</div>
+  <div class="features-list">
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+      <div class="feature-title">Powerful Search & Filter</div>
+      <div class="feature-desc">Find listings by location, category, or keyword. Filter by trending, rooms, cities, and more.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa-solid fa-plus"></i></div>
+      <div class="feature-title">Easy Listing Creation</div>
+      <div class="feature-desc">Add your own stays with images, categories, and details in a few clicks. Edit anytime.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+      <div class="feature-title">Reviews & Ratings</div>
+      <div class="feature-desc">Share your experience, rate listings, and read reviews from other travelers.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+      <div class="feature-title">Interactive Maps</div>
+      <div class="feature-desc">See every listing on a map and explore locations visually before booking or contacting.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+      <div class="feature-title">Mobile Friendly</div>
+      <div class="feature-desc">Enjoy a seamless experience on any device with our fully responsive design.</div>
+    </div>
+  </div>
+</div>
+<div class="how-section">
+  <div class="how-title">How to Use WanderLust</div>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-num">1</div>
+      <div class="how-step-title">Sign Up or Log In</div>
+      <div class="how-step-desc">Create an account to start listing, reviewing, or saving your favorite stays.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">2</div>
+      <div class="how-step-title">Browse & Search</div>
+      <div class="how-step-desc">Use the search bar and filters to find the perfect destination or experience.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">3</div>
+      <div class="how-step-title">Add or Book Listings</div>
+      <div class="how-step-desc">List your own property or contact hosts for bookings and questions.</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">4</div>
+      <div class="how-step-title">Leave a Review</div>
+      <div class="how-step-desc">Share your experience and help others by leaving honest reviews and ratings.</div>
+    </div>
+  </div>
+</div>

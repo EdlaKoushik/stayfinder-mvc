@@ -1,26 +1,79 @@
 <% layout('/layouts/boilerplate') -%>
-
-
-<div class="row mt-3">
-    <h1 class="col-6 offset-3">SignUp on Wanderlust</h1>
-    <div class="col-6 offset-3">
-     <form action="/signup" method="POST" class="needs-validation" novalidate>
-     <div class="mb-3">
-        <label for="username=" class="form-label">Username</label>
-        <input name="username" type="text" class="form-control"  id="username" required/>
-        <div class="valid-feedback">Looks good!</div>  
-     </div>
-     <div class="mb-3">
+<style>
+  .auth-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+  }
+  .auth-card {
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(254,66,77,0.10);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    max-width: 420px;
+    width: 100%;
+    margin: 2rem auto;
+  }
+  .auth-title {
+    color: #fe424d;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .form-label {
+    font-weight: 600;
+    color: #444;
+  }
+  .form-control {
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    padding: 0.7rem 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .btn-auth {
+    background: #fe424d;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 1.2rem;
+    font-size: 1.15rem;
+    width: 100%;
+    padding: 0.7rem 0;
+    margin-top: 0.5rem;
+    border: none;
+    box-shadow: 0 2px 8px rgba(254,66,77,0.08);
+    transition: background 0.2s;
+  }
+  .btn-auth:hover {
+    background: #d92d3a;
+    color: #fff;
+  }
+</style>
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-title">Sign Up on WanderLust</div>
+    <form action="/signup" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input name="username" type="text" class="form-control" id="username" required/>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input name="email" type="text" class="form-control"  id="email" required/>
-       
-     </div>
-
-     <div class="mb-3">
+        <input name="email" type="email" class="form-control" id="email" required/>
+      </div>
+      <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input name="password" type="text" class="form-control"  id="password" required/>
-     </div>
-     <button class="btn btn-success">SignUp</button>
-     </form>
+        <input name="password" type="password" class="form-control" id="password" required/>
+      </div>
+      <button class="btn btn-auth">Sign Up</button>
+    </form>
+    <div class="mt-3 text-center">
+      <span style="color:#888;">Already have an account?</span>
+      <a href="/login" style="color:#fe424d;font-weight:700;text-decoration:none;">Login</a>
     </div>
+  </div>
 </div>

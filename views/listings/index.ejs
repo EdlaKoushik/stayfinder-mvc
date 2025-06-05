@@ -1,113 +1,200 @@
+<% 
+  const searchVal = typeof search !== 'undefined' ? search : '';
+  const filterVal = typeof filter !== 'undefined' ? filter : '';
+%>
 <% layout('/layouts/boilerplate') -%>
 <style>
   #filters{
     display:flex;
     flex-wrap:wrap;
     align-items:center;
-  }  
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
   .filter{
     text-align:center;
-    margin-right:2rem;
-    margin-top:2rem;
+    margin-right:0.5rem;
+    margin-top:0.5rem;
     opacity:0.7;
-    
+    background: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 0.75rem 1.25rem;
+    transition: all 0.2s;
+    border: 1px solid #eee;
+    min-width: 110px;
   }
-  .filter:hover{
+  .filter.active, .filter:hover{
     opacity:1;
     cursor:pointer;
+    background: #fe424d;
+    color: #fff;
+    border: 1px solid #fe424d;
   }
   .filter p{
-    font-size:0.8rem;
+    font-size:0.9rem;
+    margin: 0;
+    font-weight: 600;
   }
   .tax-info{
     display:none;
   }
   .tax-toggle{
-    border:1px  solid black;
+    border:1px  solid #fe424d;
     border-radius:1rem;
     height:3.25rem;
-    padding:1rem;
-    margin-left:3rem;
+   
+    
     display:flex;
     align-items:center;
+    background: #fff0f0;
+  }
+  .tax-toggle-page {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    padding-right:0;
     
   }
-
+  .form-check-reverse.form-switch {
+    background: #fff0f0;
+    border-radius: 1rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.2rem; /* Restore original padding */
+    border: 1px solid #fe424d;
+    height: 3.25rem;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 8px rgba(254,66,77,0.07);
+    min-width: 260px;
+    max-width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+     transition: box-shadow 0.2s;
+  }
+    .form-check-reverse.form-switch:hover {
+    box-shadow: 0 4px 16px rgba(254,66,77,0.13);
+    border-color: #d92d3a;
+  }
+ .form-check-label {
+    flex: 1;
+    white-space: nowrap;
+    text-align: left;
+    margin-left: 0;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .form-check-input[type="checkbox"] {
+    margin-left: 0.5rem;
+    margin-right: 0;
+    transform: scale(1.25);
+    cursor: pointer;
+    accent-color: #fe424d;
+  }
+   .form-switch.form-check-reverse .form-check-input[type="checkbox"] {
+    margin-left: 0.5rem !important; /* or your preferred value */
+    margin-right: 0 !important;
+  }
+  .listing-card {
+    border-radius: 1.5rem !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    transition: transform 0.15s;
+    overflow: hidden;
+  }
+  .listing-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(254,66,77,0.12);
+  }
+  .card-img-top {
+    border-radius: 1.5rem 1.5rem 0 0 !important;
+    height: 18rem;
+    object-fit: cover;
+  }
+  .search-bar {
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+  }
+  .search-inp {
+    border-radius: 2rem 0 0 2rem;
+    border: 1px solid #fe424d;
+    padding: 0.75rem 1.5rem;
+    width: 350px;
+    font-size: 1.1rem;
+    outline: none;
+  }
+  .search-btn {
+    border-radius: 0 2rem 2rem 0;
+    background: #fe424d;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+  }
+  .search-btn:hover {
+    background: #d92d3a;
+  }
 </style>
-     <div id="filters">
-        <div class="filter">
-          <div><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
-        </div>
-        
-            <div class="filter">
-              <div><i class="fa-solid fa-bed"></i></div>
-                <p>Rooms</p>
-            </div>
-            <div class="filter">
-                <div><i class="fa-solid fa-mountain-city"></i></div>
-                  <p>Iconic Cities</p>
-              </div>
-                  <div class="filter">
-                    <div><i class="fa-solid fa-mountain"></i></div>
-                      <p>Mountains</p>
-                  </div>
-                  <div class="filter">
-                    <div><i class="fa-brands fa-fort-awesome"></i></div>
-                      <p>Castles</p>
-                  </div>
-                  
-                    <div class="filter">
-                      <div><i class="fa-solid fa-person-swimming"></i></div>
-                        <p>Amazing Pools</p>
-                    </div>
-                    
-                        <div class="filter">
-                          <div><i class="fa-solid fa-campground"></i></div>
-                            <p>camping</p>
-                        </div>
-                        <div class="filter">
-                            <div><i class="fa-solid fa-cow"></i></div>
-                              <p>Farms</p>
-                          </div>
-                              <div class="filter">
-                                <div><i class="fa-solid fa-snowflake"></i></div>
-                                  <p>Arctic</p>
-                              </div>
-                              <div class="filter">
-                                <div><i class="fa-solid fa-igloo"></i></div>
-                                  <p>Domes</p>
-                              </div>
-                              <div class="filter">
-                                <div><i class="fa-solid fa-ship"></i></div>
-                                  <p>Boats</p>
-                              </div>
-    <div class="tax-toggle">
-        <div class="form-check-reverse form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+
+<% if (currUser) { %>
+  <div class="tax-toggle-page">
+    <div class="form-check-reverse form-switch">
+      <label class="form-check-label" for="flexSwitchCheckDefaultPage">Display total after taxes</label>
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefaultPage">
+    </div>
+  </div>
+<% } %>
+
+<div id="filters">
+  <% const filters = [
+    { label: 'Trending', icon: 'fa-fire' },
+    { label: 'Rooms', icon: 'fa-bed' },
+    { label: 'Iconic Cities', icon: 'fa-mountain-city' },
+    { label: 'Mountains', icon: 'fa-mountain' },
+    { label: 'Castles', icon: 'fa-fort-awesome' },
+    { label: 'Amazing Pools', icon: 'fa-person-swimming' },
+    { label: 'Camping', icon: 'fa-campground' },
+    { label: 'Farms', icon: 'fa-cow' },
+    { label: 'Arctic', icon: 'fa-snowflake' },
+    { label: 'Domes', icon: 'fa-igloo' },
+    { label: 'Boats', icon: 'fa-ship' }
+  ]; %>
+  <% for (let f of filters) { %>
+    <form method="get" action="/listings" style="display:inline;">
+      <% if (searchVal) { %>
+        <input type="hidden" name="search" value="<%= searchVal %>">
+      <% } %>
+      <input type="hidden" name="filter" value="<%= f.label %>">
+      <button type="submit" class="filter<%= filterVal === f.label ? ' active' : '' %>">
+        <div><i class="fa-solid <%= f.icon %>"></i></div>
+        <p><%= f.label %></p>
+      </button>
+    </form>
+  <% } %>
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 ">
+  <% for(let listing of allListings) { %>
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+      <div class="card col listing-card">
+        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listing.title %> </b><br>
+            &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %> /night
+            <i class="tax-info">&nbsp;&nbsp;+18%GST</i><br>
+            <span style="color:#888;font-size:0.95em"><%= listing.location %>, <%= listing.country %></span>
+          </p>
         </div>
       </div>
-     </div> 
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 ">
-        <% for(let listing of allListings) { %>
-            <a href="/listings/<%= listing._id %>" class="listing-link">
-                <div class="card col listing-card">
-                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
-                    <div class="card-img-overlay"></div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <b><%= listing.title %> </b><br>
-                            &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %> /night
-                            <i class="tax-info">&nbsp;&nbsp;+18%GST</i><br>
-                        </p>
-                    </div>
-                </div>
-            </a>
-        <% } %>
-    </div>
+    </a>
+  <% } %>
+</div>
 <script>
-  let taxSwitch=document.getElementById("flexSwitchCheckDefault")
+  let taxSwitch=document.getElementById("flexSwitchCheckDefaultPage");
   taxSwitch.addEventListener("click",()=>{
    let taxInfo=document.getElementsByClassName("tax-info");
    for(info of taxInfo){
@@ -121,7 +208,7 @@
 </script>
 
 
-        
+
 
 
 

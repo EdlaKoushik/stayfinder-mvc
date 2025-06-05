@@ -1,0 +1,141 @@
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter {
+  text-align: center;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.75rem 1.25rem;
+  transition: all 0.2s;
+  border: 1px solid #eee;
+  min-width: 110px;
+  cursor: pointer;
+  border: none;
+}
+
+.filter.active, .filter:hover {
+  opacity: 1;
+  cursor: pointer;
+  background: #fe424d;
+  color: #fff;
+  border: 1px solid #fe424d;
+}
+
+.filter p {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.tax-info {
+  display: none;
+}
+
+.tax-toggle-page {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  padding-right: 0;
+}
+
+.form-check-reverse.form-switch {
+  background: #fff0f0;
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.2rem;
+  border: 1px solid #fe424d;
+  height: 3.25rem;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(254,66,77,0.07);
+  min-width: 260px;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  transition: box-shadow 0.2s;
+}
+
+.form-check-reverse.form-switch:hover {
+  box-shadow: 0 4px 16px rgba(254,66,77,0.13);
+  border-color: #d92d3a;
+}
+
+.form-check-label {
+  flex: 1;
+  white-space: nowrap;
+  text-align: left;
+  margin-left: 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.form-check-input[type="checkbox"] {
+  margin-left: 0.5rem;
+  margin-right: 0;
+  transform: scale(1.25);
+  cursor: pointer;
+  accent-color: #fe424d;
+}
+
+.listing-card {
+  border-radius: 1.5rem !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transition: transform 0.15s;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.listing-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(254,66,77,0.12);
+}
+
+.card-img-top {
+  border-radius: 1.5rem 1.5rem 0 0 !important;
+  height: 18rem;
+  object-fit: cover;
+}
+
+.search-bar {
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-inp {
+  border-radius: 2rem 0 0 2rem;
+  border: 1px solid #fe424d;
+  padding: 0.75rem 1.5rem;
+  width: 350px;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.search-btn {
+  border-radius: 0 2rem 2rem 0;
+  background: #fe424d;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #d92d3a;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+} 
