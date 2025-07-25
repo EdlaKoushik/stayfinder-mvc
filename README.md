@@ -1,73 +1,70 @@
-# Wanderlust - MERN Stack Application
 
-A full-stack MERN (MongoDB, Express.js, React.js, Node.js) application for listing and booking accommodations.
+
+# Stayfinder - Node.js MVC Application
+
+A server-rendered Node.js application for listing and booking accommodations, built using the MVC (Model-View-Controller) pattern with Express, MongoDB, and EJS.
 
 ## Project Structure
 
+
 ```
-wanderlust/
-├── frontend/                   # React frontend
-│   ├── public/
-│   └── src/
-│       ├── components/        # Reusable components
-│       ├── pages/            # Page components
-│       ├── styles/           # CSS files
-│       ├── context/          # React context
-│       ├── utils/            # Utility functions
-│       └── api/              # API integration
-│
-└── backend/                   # Node.js backend
-    ├── controllers/          # Route controllers
-    ├── models/              # MongoDB models
-    ├── routes/              # API routes
-    ├── middleware/          # Custom middleware
-    └── utils/               # Utility functions
+MVCproject/
+├── app.js                # Main Express application file
+├── models/               # Mongoose models (MongoDB schemas)
+│   └── user.js
+├── routes/               # Express route handlers
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+├── utils/                # Utility functions and custom errors
+│   └── ExpressError.js
+├── views/                # EJS templates for server-side rendering
+│   ├── layouts/
+│   └── listings/
+├── public/               # Static assets (CSS, images, JS)
+├── package.json          # Project metadata and dependencies
+└── .env                  # Environment variables (not committed)
 ```
+
 
 ## Setup Instructions
 
-### Backend Setup
-1. Navigate to the backend directory:
+1. Clone the repository:
    ```bash
-   cd backend
+   git clone https://github.com/EdlaKoushik/stayfinder-mvc.git
+   cd MVCproject
    ```
 2. Install dependencies:
    ```bash
    npm install
    ```
-3. Create a .env file with the following variables:
+3. Create a `.env` file in the root directory with the following variables:
    ```
-   MONGODB_URI=your_mongodb_uri
-   JWT_SECRET=your_jwt_secret
-   PORT=8000
+   ATLASDB_URL=your_mongodb_connection_string
+   SECRET=your_session_secret
    ```
 4. Start the server:
    ```bash
-   npm start
-   ```
-
-### Frontend Setup
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a .env file with:
-   ```
-   REACT_APP_API_URL=http://localhost:8000/api
-   ```
-4. Start the development server:
-   ```bash
-   npm start
+   node app.js
    ```
 
 ## Features
-- User authentication
-- Property listings with filters
-- Search functionality
-- Tax display toggle
-- Responsive design
-- Category-based filtering 
+- User authentication (register, login, logout)
+- Property listings with add, edit, delete
+- Review system for listings
+- Search and filter functionality
+- Flash messages for user feedback
+- Responsive EJS templates
+- Session management with MongoDB
+
+## Folder Details
+
+- **models/**: Contains Mongoose schemas for MongoDB collections.
+- **routes/**: Defines all Express routes for listings, reviews, and users.
+- **views/**: EJS templates for rendering HTML pages.
+- **public/**: Static files like CSS and images.
+- **utils/**: Custom error classes and helper functions.
+
+## License
+
+This project is for educational purposes.
