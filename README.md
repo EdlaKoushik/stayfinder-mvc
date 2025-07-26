@@ -1,11 +1,8 @@
-
-
 # Stayfinder - Node.js MVC Application
 
 A server-rendered Node.js application for listing and booking accommodations, built using the MVC (Model-View-Controller) pattern with Express, MongoDB, and EJS.
 
 ## Project Structure
-
 
 ```
 MVCproject/
@@ -25,7 +22,6 @@ MVCproject/
 ├── package.json          # Project metadata and dependencies
 └── .env                  # Environment variables (not committed)
 ```
-
 
 ## Setup Instructions
 
